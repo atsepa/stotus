@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { StatusPageComponent } from './pages/status-page/status-page.component';
+import { ViewStatusPageComponent } from './pages/view-status-page/view-status-page.component';
 
 
 const routes: Routes = [
-  {
-    path: 'status',
-    pathMatch: 'full',
-    component: StatusPageComponent
-  },];
+	{
+		path: 'view-status',
+		pathMatch: 'full',
+		component: ViewStatusPageComponent
+	},];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
 })
 export class AppRoutingModule { }
