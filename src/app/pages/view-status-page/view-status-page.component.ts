@@ -15,7 +15,7 @@ export class ViewStatusPageComponent implements OnInit {
 	constructor(private myService: MyService) {
 	}
 	ngOnInit(): void {
-		console.log('hola')
+		console.log('INIT')
 		this.myService.getServerSentEvent().pipe(
 			// todo filter response to just get the data out of all the object
 			// tap((message: any) => message.data),
