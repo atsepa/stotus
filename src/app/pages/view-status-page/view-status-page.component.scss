@@ -1,0 +1,87 @@
+@mixin glowColor($color) {
+	color: #fff;
+	text-shadow:
+		0 0 7px #fff,
+		0 0 10px #fff,
+		0 0 21px #fff,
+		0 0 42px $color,
+		0 0 82px $color,
+		0 0 92px $color,
+		0 0 102px $color,
+		0 0 151px $color;
+}
+
+.view-status {
+	width: 100%;
+	margin-left: 10px;
+	margin-right: 10px;
+
+	h1 {
+		text-align: center;
+		font-weight: 400;
+		letter-spacing: 8px;
+		font-size: 20vw;
+		font-family: 'neon', 'arial', sans-serif;
+	}
+
+	&__neon-glow--green {
+		@include glowColor(#0fa);
+	}
+
+	&__neon-glow--red {
+		@include glowColor(#f00);
+	}
+
+	&__neon-glow--purple {
+		font-size: 13vw !important;
+		@include glowColor(rgb(204, 0, 255));
+	}
+
+	&__neon-glow--orange {
+		@include glowColor(rgb(255, 128, 0));
+	}
+
+	&__neon-glow--blue {
+		@include glowColor(#00f);
+	}
+
+	&__neon-glow--yellow {
+		@include glowColor(#ff0);
+	}
+
+	&__neon-glow--turquoise {
+		@include glowColor(#0ff);
+	}
+
+	.flicker-slow {
+		animation: flicker 10s linear infinite;
+	}
+
+	.flicker-fast {
+		animation: flicker 2s linear infinite;
+	}
+
+	@keyframes flicker {
+
+		0%,
+		19.999%,
+		22%,
+		62.999%,
+		64%,
+		64.999%,
+		70%,
+		100% {
+			opacity: .99;
+
+		}
+
+		20%,
+		21.999%,
+		63%,
+		63.999%,
+		65%,
+		69.999% {
+			opacity: 0.4;
+		}
+	}
+}
